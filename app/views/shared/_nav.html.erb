@@ -13,10 +13,7 @@
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to user_path(current_user.username), class: "nav-link" do %>
-              <% if current_user.avatar.nil? %>
-                <%= image_tag current_user.avatar.variant(resize: "24x24!"), class: "mr-1" %>
-
-              <% end %>
+              <%= image_tag avatar_url_for(current_user, size: 24), class: "rounded-circle mr-1" %>
               <%= current_user.username %>
             <% end %>
           </li>

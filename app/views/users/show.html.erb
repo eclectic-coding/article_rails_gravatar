@@ -1,8 +1,6 @@
 <div class="d-flex align-items-center justify-content-center mt-5">
   <div class="media mr-5 align-self-start">
-    <% if current_user.avatar.nil? %>
-      <%= image_tag current_user.avatar.variant(resize: "128x128!"), class: "rounded-circle mr-4" %>
-    <% end %>
+    <%= image_tag avatar_url_for(current_user, size: 128), class: "rounded-circle mr-4" %>
   </div>
   <div class="media">
     <div class="media-body">
